@@ -14,9 +14,14 @@ public class Scoreboard {
     {
         return teamOneScore + "-" + teamTwoScore + "-" + activeTeam;
     }
-    public void recordPlay(int score)
-    { 
-        teamOneScore = score
+    public void recordPlay(int score) {
+        if (activeTeam.equals(teamOne)) {
+            teamOneScore += score;
+            activeTeam = teamTwo; 
+        } else {
+            teamTwoScore += score;
+            activeTeam = teamOne; 
+        }
     }
 
 }
